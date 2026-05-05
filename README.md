@@ -5,46 +5,46 @@ print("JARVIS ONLINE")
 
 while True:
 
-    comando = input("Tú: ").lower()
+comando = input("Tú: ").lower()
 
-    if comando == "hola":
+if comando == "hola":
 
-        print("JARVIS: Buenos días, señor.")
+print("JARVIS: Buenos días, señor.")
 
-    elif comando == "hora":
+elif comando == "hora":
 
-        hora = datetime.datetime.now().strftime("%H:%M")
+hora = datetime.datetime.now().strftime("%H:%M")
 
-        print("JARVIS: La hora actual es", hora)
+print("JARVIS: La hora actual es", hora)
 
-    elif comando == "youtube":
+elif comando == "youtube":
 
-        print("JARVIS: Abriendo YouTube...")
+print("JARVIS: Abriendo YouTube...")
         webbrowser.open("https://youtube.com")
+        
+elif comando == "google":
 
-    elif comando == "google":
-
-        print("JARVIS: Abriendo Google...")
+print("JARVIS: Abriendo Google...")
         webbrowser.open("https://google.com")
 
-    elif "cuanto es" in comando:
+elif "cuanto es" in comando:
 
-        operacion = comando.replace("cuanto es", "")
+operacion = comando.replace("cuanto es", "")
 
-        try:
+try:
             resultado = eval(operacion)
             print("JARVIS:", resultado)
 
-        except:
+except:
             print("JARVIS: No pude calcular eso.")
 
-    elif comando == "nombre":
+elif comando == "nombre":
 
-        print("JARVIS: Soy JARVIS, su asistente inteligente.")
+print("JARVIS: Soy JARVIS, su asistente inteligente.")
 
-    elif comando == "ayuda":
+elif comando == "ayuda":
 
-        print("""
+print("""
 COMANDOS:
 - hola
 - hora
@@ -56,11 +56,29 @@ COMANDOS:
 - salir
 """)
 
-    elif comando == "salir":
+   elif comando == "salir":
 
-        print("JARVIS: Apagando sistemas.")
+   print("JARVIS: Apagando sistemas.")
         break
 
     else:
 
-        print("JARVIS: Comando no reconocido.")
+  print("JARVIS: Comando no reconocido.")
+    elif comando == "google":
+
+    print("JARVIS: Abriendo Google...")
+    webbrowser.open("https://google.com")
+
+    elif "buscar" in comando:
+
+    busqueda = comando.replace("buscar", "")
+
+    print("JARVIS: Buscando", busqueda)
+
+    webbrowser.open(
+        "https://www.google.com/search?q=" + busqueda
+    )
+
+    elif comando == "nombre":
+
+    print("JARVIS: Soy JARVIS, su asistente inteligente.")
