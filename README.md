@@ -27,9 +27,16 @@ while True:
         print("JARVIS: Abriendo Google...")
         webbrowser.open("https://google.com")
 
-    elif comando == "2+2":
+    elif "cuanto es" in comando:
 
-        print("JARVIS: El resultado es 4.")
+        operacion = comando.replace("cuanto es", "")
+
+        try:
+            resultado = eval(operacion)
+            print("JARVIS:", resultado)
+
+        except:
+            print("JARVIS: No pude calcular eso.")
 
     elif comando == "nombre":
 
@@ -43,7 +50,7 @@ COMANDOS:
 - hora
 - youtube
 - google
-- 2+2
+- cuanto es 5+5
 - nombre
 - ayuda
 - salir
